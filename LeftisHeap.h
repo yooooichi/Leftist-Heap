@@ -19,13 +19,13 @@ void InsertarZona() {
 	string s1, s2;
 	int b;
 	
-	cout << "Ingrese la ubicación del incidente: ";
+	cout << "Ingrese la ubicación del incidente: " << endl;
 	getline(cin, s1);
 	
-	cout << "Ingrese una descripcion para el incidente: ";
+	cout << "Ingrese una descripcion para el incidente: " << endl;
 	getline(cin, s2);
 	
-  cout << "Ingrese una prioridad para el incidente registrado: ";
+  cout << "Ingrese una prioridad para el incidente registrado: " << endl;
   cin >> b;
 	
 	Nodo* temp = new Nodo(b, s1, s2);
