@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 using namespace std;
 
 struct Nodo { // min leftist heap
@@ -12,6 +13,15 @@ struct Nodo { // min leftist heap
     
     Nodo(int v, string x, string z) : dato(v), ubicacion(x), descripcion(z), npl(0), izq(nullptr), der(nullptr) {};
 };
+vector<Nodo*> zonas;
+
+void mostrarZonas() {
+	for(int i = 0; i < zonas.size(); i++) {
+		cout << "Zona #" << i << endl;
+		cout << "Nombre del incidente: " << zonas[i]->caso << endl;
+		cout << "Descripcion del incidente: " << zonas[i]->descripcio << endl;
+	}
+}
 
 Nodo* merge(Nodo* heap, Nodo* nuevoNodo){
     if(!heap) return nuevoNodo;
