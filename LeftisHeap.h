@@ -66,6 +66,7 @@ Nodo* merge(Nodo* heap, Nodo* nuevoNodo){
 Nodo* insertar(Nodo* aux1) {
 	string s1, s2;
 	int b;
+	cin.ignore();
 	
 	cout << "Ingrese el nombre del incidente: ";
 	getline(cin, s1);
