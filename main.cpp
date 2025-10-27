@@ -7,43 +7,67 @@ int main() {
   int opc;
     
     do{
-        cout <<"Simulación de programa";
-        cout<< "Elija una opcion:"
-        cout<<"1.Insertar Incidentes";
-        cout<<"2.Solucionar incidente";
-        cout<<"3.Fusionar zonas";
-        cout <<"4.Insertar zonas";
-      
-        cout<<"5.Salir";
+        cout <<"Simulación de programa"<<endl;
+        cout<<"1.Insertar Incidentes"<<endl;
+        cout<<"2.Solucionar incidente"<<endl;
+        cout<<"3.Fusionar zonas"<<endl;
+        cout <<"4.Insertar zonas"<<endl;
+        cout<<"5.Salir"<<endl;
+        cout<< "Elija una opcion:";
+        cin >> opc;
         
         switch (opc){
-          case 1:
-            insertar(HeapPrincipal);
+          case 1:{
+              mostrarZonas();
+              cout<<" Escoja a que zona desea insertar:"<<endl<<endl;
+            
+            int a;
+            cin>>a;
+            insertar(zonas[a]);
             break;
-          case 2:
-            remove(HeapPrincipal);
-          break;
-          case 3:
-            cout <<"Zonas disponibles a mezclar:" <<endl;
-            for (int i =0; i<zonas.size();i++){
-              cout<< "Caso #"<<i<<endl;
-              cout<<"Nombre del caso: "<<zonas[i]->caso<<endl;
-              cout<<"Descripcion: "<< zonas[i]->descripcion<<endl;
-            }
+              
+          }
+            
+          
+          case 2: {
+              //remove(HeapPrincipal);
+            break;
+              
+          }
+            
+          
+          case 3:{
+              cout <<"Zonas disponibles a mezclar:" <<endl;
+            mostrarZonas();
             cout<<"Escoja dos zonas a mezclar: ";
-            int x, int y;
+            int x, y;
             cin >>x;
             cin>>y;
-            merge(zonas[x], zonas[y]);
-          break;
-          case 4:
-          InsertarZona
-
+            fusionarDosZonas(zonas[x], zonas[y]);
+            break;
+              
+          }
+            
+          
+          case 4:{
+              InsertarZona();
+            break;
+          }
+            
+          
+          case 5:{
+              cout<<"Saliendo del programa...";
+            break;
+          }
+            
           
           default:
+            cout<<"Ingrese una opcion valida";
             break;
           
           
             
         }
+    }while(opc!=5);
+    return 0;
 }
