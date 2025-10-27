@@ -19,7 +19,7 @@ void InsertarZona() {
 	string s1, s2;
 	int b;
 	
-	cout << "Ingrese el nombre del incidente: ";
+	cout << "Ingrese la ubicación del incidente: ";
 	getline(cin, s1);
 	
 	cout << "Ingrese una descripcion para el incidente: ";
@@ -36,8 +36,8 @@ void InsertarZona() {
 void mostrarZonas() {
 	for(int i = 0; i < zonas.size(); i++) {
 		cout << "Zona #" << i << endl;
-		cout << "Nombre del incidente: " << zonas[i]->caso << endl;
-		cout << "Descripcion del incidente: " << zonas[i]->descripcio << endl;
+		cout << "Ubicacion del incidente: " << zonas[i]->ubicacion << endl;
+		cout << "Descripcion del incidente: " << zonas[i]->descripcion << endl;
 	}
 }
 
