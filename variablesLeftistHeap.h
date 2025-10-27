@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 using namespace std;
 
 struct Nodo { // min leftist heap
@@ -11,6 +12,25 @@ struct Nodo { // min leftist heap
 
     Nodo(int v, string x, string z) : dato(v), caso(x), descripcion(z), izq(nullptr), der(nullptr) {};
 };
+vector<Nodo*> zonas;
+
+void InsertarZona() {
+	string s1, s2;
+	int b;
+	
+	cout << "Ingrese el nombre del incidente: ";
+	getline(cin, s1);
+	
+	cout << "Ingrese una descripcion para el incidente: ";
+	getline(cin, s2);
+	
+  cout << "Ingrese una prioridad para el incidente registrado: ";
+  cin >> b;
+	
+	Nodo* temp = new Nodo(b, s1, s2);
+	zonas.push_back(temp);
+	
+}
 
 Nodo* insertar(Nodo* aux1) {
 	string s1, s2;
