@@ -60,7 +60,7 @@ Nodo* insertar(Nodo* aux1) {
 	
 	Nodo* temp = new Nodo(b, s1, s2);
     merge(aux1, temp); // donde aux1 es la raiz
-    
+	
     return aux1;
 } 
 
