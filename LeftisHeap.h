@@ -63,7 +63,22 @@ Nodo* insertar(Nodo* aux1) {
 	
     return aux1;
 } 
-
+Nodo* atenderIncidente(Nodo* heap) {
+    if (!heap) {
+        cout << "No hay incidentes para atender." << endl;
+        return nullptr;
+    }
+    cout << "Incidente atendido:" << endl;
+    cout << "Prioridad: " << heap->dato << endl;
+    cout << "Ubicación: " << heap->ubicacion << endl;
+    cout << "Descripción: " << heap->descripcion << endl;
+    
+    Nodo* izquierdo = heap->izq;
+    Nodo* derecho = heap->der;
+    
+    delete heap;
+    return merge(izquierdo, derecho);
+}
 void fusionarDosZonas(Nodo* zona1, Nodo* zona2){
     cout<<"Debido a la falta de recursos, se va a proceder a fusionar la zona de atención "<<zona1->ubicacion<<" y "<<zona2->ubicacion<<". "<<endl;
     merge(zona1, zona2);
