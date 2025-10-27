@@ -1,5 +1,5 @@
 #include <iostream>
-#include <variablesLeftistHeap.h>
+#include <LeftisHeap.h>
 using namespace std;
 
 int main() {
