@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-struct Nodo { // min heap sesgado
+struct Nodo { // min leftist heap
     int dato; // prioridad
     string caso;
     string descripcion;
