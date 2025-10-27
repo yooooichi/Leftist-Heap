@@ -1,7 +1,3 @@
-#include <iostream>
-#include "LeftisHeap.h"
-using namespace std;
-
 int main() {
   Nodo* HeapPrincipal;
   int opc;
@@ -15,7 +11,7 @@ int main() {
         cout<<"5.Salir"<<endl;
         cout<< "Elija una opcion:";
         cin >> opc;
-        cin.ignore;
+        cin.ignore();
         
         switch (opc){
           case 1:{
@@ -35,7 +31,11 @@ int main() {
             
           
           case 2: {
-            atenderIncidente();
+              mostrarZonas();
+              cout<<"Escoja una zona:";
+              int i;
+              cin>>i;
+            atenderIncidente(zonas[i]);
             break;
               
           }
