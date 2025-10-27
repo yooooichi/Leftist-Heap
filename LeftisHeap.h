@@ -15,6 +15,24 @@ struct Nodo { // min leftist heap
 };
 vector<Nodo*> zonas;
 
+void InsertarZona() {
+	string s1, s2;
+	int b;
+	
+	cout << "Ingrese el nombre del incidente: ";
+	getline(cin, s1);
+	
+	cout << "Ingrese una descripcion para el incidente: ";
+	getline(cin, s2);
+	
+  cout << "Ingrese una prioridad para el incidente registrado: ";
+  cin >> b;
+	
+	Nodo* temp = new Nodo(b, s1, s2);
+	zonas.push_back(temp);
+	
+}
+
 void mostrarZonas() {
 	for(int i = 0; i < zonas.size(); i++) {
 		cout << "Zona #" << i << endl;
