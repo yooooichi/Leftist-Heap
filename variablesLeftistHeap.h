@@ -7,9 +7,9 @@ struct Nodo { // min leftist heap
     string descripcion;
     Nodo* izq;
     Nodo* der;
-    bool solucionado;
+    
 
-    Nodo(int v, string x, string z) : dato(v), caso(x), descripcion(z), solucionado(false), izq(nullptr), der(nullptr) {};
+    Nodo(int v, string x, string z) : dato(v), caso(x), descripcion(z), izq(nullptr), der(nullptr) {};
 };
 
 Nodo* insertar(Nodo* aux1) {
