@@ -15,9 +15,14 @@ int main() {
         cout<<"5.Salir"<<endl;
         cout<< "Elija una opcion:";
         cin >> opc;
+        cin.ignore;
         
         switch (opc){
           case 1:{
+              if(zonas.empty()){
+                cout<<" no existen zonas";
+                break;
+              }
               mostrarZonas();
               cout<<" Escoja a que zona desea insertar:"<<endl<<endl;
             
