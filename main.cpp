@@ -35,7 +35,7 @@ int main() {
             
           
           case 2: {
-              //remove(HeapPrincipal);
+            atenderIncidente();
             break;
               
           }
