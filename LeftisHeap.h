@@ -106,3 +106,14 @@ void fusionarDosZonas(int x, int y) {
     zonas.erase(zonas.begin() + y);
     cout << "Zonas fusionadas correctamente." << endl;
 }
+
+void mostrarIncidenteMin(Nodo* heap) {
+    if (!heap) {
+        cout << "No hay incidentes registrados." << endl;
+        return;
+    }
+    cout << "\nIncidente más urgente: " << endl;
+    cout << "Prioridad: " << heap->dato << endl;
+    cout << "Ubicación: " << heap->ubicacion << endl;
+    cout << "Descripción: " << heap->descripcion << endl;
+}
