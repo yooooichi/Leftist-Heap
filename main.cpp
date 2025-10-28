@@ -13,6 +13,7 @@ int main() {
         cout<<"3.Fusionar zonas"<<endl;
         cout<<"4.Insertar zonas"<<endl;
         cout<<"5.Salir"<<endl;
+        cout<<"6.Visualizar el incidente más urgente sin eliminarlo."<<endl;
         cout<<"Elija una opcion: ";
         cin >> opc;
         
@@ -72,6 +73,17 @@ int main() {
               cout<<"Saliendo del programa...";
             break;
           }
+          case 6: 
+            if (zonas.empty()) {
+                cout << "No hay zonas disponibles." << endl;
+                break;
+            }
+            mostrarZonas();
+            cout << "Seleccione una zona: ";
+            int z;
+            cin >> z;
+            mostrarIncidenteMin(zonas[z]);
+            break;
             
           default:
             cout<<"Ingrese una opcion valida";
