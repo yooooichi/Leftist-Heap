@@ -16,19 +16,20 @@ struct Nodo { // min leftist heap
 vector<Nodo*> zonas;
 
 void InsertarZona() {
+    cin.ignore();
 	string s1, s2;
 	int b;
 	
-	cout << "Ingrese la ubicación del incidente: " << endl;
+	cout << "Ingrese la ubicación del incidente: ";
 	getline(cin, s1);
 	
-	cout << "Ingrese una descripcion para el incidente: " << endl;
+	cout << "Ingrese una descripcion para el incidente: ";
 	getline(cin, s2);
 	
-  cout << "Ingrese una prioridad para el incidente registrado: " << endl;
+  cout << "Ingrese una prioridad para el incidente registrado: ";
   cin >> b;
 	
-	Nodo* temp = new Nodo(b, s1, s2);
+    Nodo* temp = new Nodo(b, s1, s2);
 	zonas.push_back(temp);
 	
 }
@@ -68,17 +69,17 @@ Nodo* insertar(Nodo* aux1) {
 	int b;
 	cin.ignore();
 	
-	cout << "Ingrese el nombre del incidente: ";
+	cout << "Ingrese la ubicacion del incidente: ";
 	getline(cin, s1);
 	
 	cout << "Ingrese una descripcion para el incidente: ";
 	getline(cin, s2);
 	
-  cout << "Ingrese una prioridad para el incidente registrado: ";
-  cin >> b;
+	cout << "Ingrese una prioridad para el incidente registrado: ";
+    cin >> b;
 	
 	Nodo* temp = new Nodo(b, s1, s2);
-    merge(aux1, temp); // donde aux1 es la raiz
+    aux1 = merge(aux1, temp); // donde aux1 es la raiz
 	
     return aux1;
 } 
@@ -98,9 +99,10 @@ Nodo* atenderIncidente(Nodo* heap) {
     delete heap;
     return merge(izquierdo, derecho);
 }
-void fusionarDosZonas(Nodo* zona1, Nodo* zona2){
-    cout<<"Debido a la falta de recursos, se va a proceder a fusionar la zona de atención "<<zona1->ubicacion<<" y "<<zona2->ubicacion<<". "<<endl;
-    merge(zona1, zona2);
-    
-    cout<<"Zonas fusionadas correctamente."<<endl;
+
+void fusionarDosZonas(int x, int y) {
+    cout << "Debido a la falta de recursos, se va a proceder a fusionar la zona de atención "<< zonas[x]->ubicacion << " y " << zonas[y]->ubicacion << ". " << endl;
+    zonas[x] = merge(zonas[x], zonas[y]);
+    zonas.erase(zonas.begin() + y);
+    cout << "Zonas fusionadas correctamente." << endl;
 }
